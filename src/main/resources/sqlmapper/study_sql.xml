@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.bootmybtis3.dao.StudyDao">
+
+    <select id="doStudyList" resultType="map">
+        SELECT CAST(key_id AS CHAR) AS key_id, 
+            study_day, 
+            contents, 
+            DATE_FORMAT(reg_day, '%Y.%m.%d %H:%i') AS reg_day
+        FROM study_record
+        ORDER BY key_id;
+
+    </select>
+
+</mapper>

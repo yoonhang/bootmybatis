@@ -1,0 +1,30 @@
+package com.example.bootmybtis3.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class Home {
+
+    // @Autowired
+    // StudyService studyService;
+
+    @RequestMapping("/home")
+    public String doHome() {
+
+        return "/WEB-INF/views/home.html";
+    }
+
+    @RequestMapping("/home2")
+    public String doHome2() {
+
+        return "redirect:/WEB-INF/views/home.html";
+    }
+
+    @RequestMapping("/home3")
+    public String doHome3() {
+
+        return "redirect:/base/home.html";
+    }
+
+}
