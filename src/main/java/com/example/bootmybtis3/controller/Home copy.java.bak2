@@ -1,9 +1,6 @@
 package com.example.bootmybtis3.controller;
 
 import com.example.bootmybtis3.service.StudyService;
-
-import jakarta.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,21 +24,9 @@ public class Home {
         return "/home/home";
     }
 
-    @RequestMapping("/home2")
-    public String doHome2() {
-
-        return "redirect:/WEB-INF/views/home.html";
-    }
-
-    @RequestMapping("/home3")
-    public String doHome3() {
-
-        return "redirect:/base/home.html";
-    }
-
     @GetMapping("/study_reg")
-    @RequestMapping
-    public String doStudy_reg(HttpServletRequest request) {
+    @ResponseBody
+    public String doStudy_reg() {
 
         List<Map<String, String>> list = new ArrayList<>();
         list = studyService.doStudyList();
@@ -51,9 +36,7 @@ public class Home {
             System.out.println(map.get("study_day"));
         }
 
-        // list = addAttribute("list", list);
-
-        return "----";
+        return "-------------";
     }
 
     @GetMapping("/member_list")

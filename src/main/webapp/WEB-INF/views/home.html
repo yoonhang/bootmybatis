@@ -1,6 +1,3 @@
-<%@ page import="java.util.Map" %>
-<%@ page import="java.util.List" %>
-<%@ page import="com.spring.boot.vo.Vo_study" %>
 <%--
   Created by IntelliJ IDEA.
   User: PC
@@ -9,10 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-<%
-    List<Map<String, String>> list = (List<Map<String, String>>) request.getAttribute("list");
-%>
 
 <html lang="en">
 <head>
@@ -32,34 +25,22 @@
 
 
 <main>
-    <div class="container">
-        <button type="button" onclick="location.href='/study/insert'">등록하기</button>
-        <div class="row mb-2">
-            <div class="col">Key_Id</div>
-            <div class="col">공부일자</div>
-            <div class="col">공부내용</div>
-            <div class="col">등록일자</div>
-            <div class="col">수정</div>
-            <div class="col">삭제</div>
+    <div class="px-4 py-2 my-2 text-center">
+        <img class="d-block mx-auto mb-4" src="/img/ITLate.jpg" alt="IT늦공 김부장 입니다.^^">
+        <h1 class="display-5 fw-bold">Spring Study [<%=strLoginId%> / <%=strName%> ]</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">자바 웹 개발을 위해 Spring boot 를 공부하고 있습니다. <br>
+                이 영상은 내 스스로가 공부한 내용을 까먹지 않기 위해 만들고 있습니다.<br>
+                아주 초보적인 내용이지만 저와 같은 분들에게 도움이 되면 그 또한 좋겠습니다.
+            </p>
+                Java 버전 : 1.8<br>
+                개발툴 : 인텔리J<br>
+                DBMS : 오라클 19c<br>
+                View  : jsp<br>
+                Mapper : 마이바티스
         </div>
-
-        <% for(Map<String, String> map : list){ %>
-            <div class="row mb-2">
-                <div class="col"><%= map.get("key_id") %></div>
-                <div class="col"><%= map.get("study_day") %></div>
-                <div class="col"><%= map.get("contents") %></div>
-                <div class="col"><%= map.get("reg_day") %></div>
-                <div class="col"><a href="/study/modify?key_id=<%= vo_study.getKeyId() %>">수정</a></div>
-                <div class="col"><a href="/study/delete?key_id=<%= vo_study.getKeyId() %>">삭제</a></div>
-            </div>
-        <% } %>
-
-
-
     </div>
-
 </main>
-
 <!-- 푸터 위치 -->
 <%@ include file="/WEB-INF/views/comm/footer.jsp"%>
 
@@ -74,7 +55,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 -->
-
 
 </body>
 </html>
